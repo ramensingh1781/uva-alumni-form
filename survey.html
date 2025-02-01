@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UVA Alumni Association Donation Payment Form</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #00205B; /* UVA Navy Blue */
+            font-size: 2rem;
+            margin-top: 50px;
+            font-weight: 600;
+        }
+
+        /* Information Section */
+        .info-section {
+            text-align: center;
+            background-color: #FF7F32; /* UVA Orange */
+            color: white;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .info-section p {
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        .info-section strong {
+            font-weight: 700;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 30px auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ddd;
+        }
+
+        .form-container label {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 8px;
+            display: block;
+            font-weight: 500;
+        }
+
+        .form-container input,
+        .form-container select,
+        .form-container button {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 16px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            background-color: #fafafa;
+        }
+
+        .form-container input:focus,
+        .form-container select:focus {
+            border-color: #FF7F32; /* UVA Orange */
+            outline: none;
+            background-color: #fff;
+        }
+
+        .form-container input[type="text"],
+        .form-container input[type="email"],
+        .form-container input[type="month"] {
+            background-color: #f4f4f4;
+        }
+
+        .form-container button {
+            background-color: #00205B; /* UVA Navy Blue */
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .form-container button:hover {
+            background-color: #001c44; /* Darker Navy for hover */
+        }
+
+        .form-container .form-footer {
+            text-align: center;
+            font-size: 14px;
+            color: #777;
+            margin-top: 20px;
+        }
+
+        .form-container .form-footer a {
+            color: #FF7F32; /* UVA Orange */
+            text-decoration: none;
+        }
+
+        .form-container .form-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .form-container {
+                padding: 25px;
+                max-width: 90%;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .info-section p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Information Section -->
+    <div class="info-section">
+        <p><strong>Support UVA Alumni Association</strong><br>
+        Your contribution helps us maintain and grow a thriving network of UVA alumni. By supporting the association, you're helping provide valuable resources, career opportunities, and community events that keep the UVA spirit alive. We appreciate your support!</p>
+    </div>
+
+    <h1>UVA Alumni Association Donation Payment Form</h1>
+
+    <div class="form-container">
+        <form id="paymentForm">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="creditCardNumber">Credit Card Number:</label>
+            <input type="text" id="creditCardNumber" name="creditCardNumber" pattern="\d{16}" maxlength="16" required placeholder="1234 5678 9876 5432">
+
+            <label for="expirationDate">Expiration Date:</label>
+            <input type="month" id="expirationDate" name="expirationDate" required>
+
+            <label for="securityCode">Security Code (CVV):</label>
+            <input type="text" id="securityCode" name="securityCode" pattern="\d{3}" maxlength="3" required placeholder="123">
+
+            <label for="billingAddress">Billing Address:</label>
+            <input type="text" id="billingAddress" name="billingAddress" required>
+
+            <label for="uvaId">UVA ID:</label>
+            <input type="text" id="uvaId" name="uvaId" required>
+
+            <button type="submit">Submit Payment</button>
+
+            <div class="form-footer">
+                <p>By submitting, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('paymentForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Payment submitted successfully! Thank you.');
+            document.getElementById('paymentForm').reset();
+        });
+    </script>
+
+</body>
+</html>
